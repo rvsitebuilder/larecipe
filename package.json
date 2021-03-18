@@ -1,0 +1,25 @@
+{
+    "vendor": "rvsitebuilder",
+    "name": "@rvsitebuilder/larecipe",
+    "version": "1.0.0",
+    "repository": "https://github.com/rvsitebuilder",
+    "description": "larecipe package",
+    "main": "webpack.mix.js",
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "if [ -z ${NODE_WEBPACK_PATH} ]; then NODE_WEBPACK_PATH=$(pwd); fi; cross-env NODE_ENV=development ${NODE_WEBPACK_PATH}/node_modules/webpack/bin/webpack.js --progress --hide-modules --config=${NODE_WEBPACK_PATH}/node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "if [ -z ${NODE_WEBPACK_PATH} ]; then NODE_WEBPACK_PATH=$(pwd); fi; cross-env NODE_ENV=development ${NODE_WEBPACK_PATH}/node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=${NODE_WEBPACK_PATH}/node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "if [ -z ${NODE_WEBPACK_PATH} ]; then NODE_WEBPACK_PATH=$(pwd); fi; npm run production",
+        "production": "if [ -z ${NODE_WEBPACK_PATH} ]; then NODE_WEBPACK_PATH=$(pwd); fi; cross-env NODE_ENV=production ${NODE_WEBPACK_PATH}/node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=${NODE_WEBPACK_PATH}/node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {},
+    "author": "",
+    "license": "see license in LICENSE",
+    "dependencies": {
+        "unpoly": "^0.62.1",
+        "@rvsitebuilder/wysiwyg": "^1.0.0"
+    }
+}

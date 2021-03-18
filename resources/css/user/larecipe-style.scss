@@ -1,0 +1,492 @@
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+    border-top: 3px solid var(--primary);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(
+        87deg,
+        var(--primary) 0,
+        var(--secondary) 100%
+    ) !important;
+}
+
+[v-cloak] > * {
+    display: none;
+}
+
+[v-cloak]::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f6fa;
+}
+
+.footer {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: left;
+}
+
+.footer .marl {
+    margin-left: 0px;
+    margin-bottom: 20px;
+}
+
+.footer .mar-icon {
+    margin-left: 0px !important;
+}
+
+@media screen and (min-width: 1024px) {
+    .hidden-desktop {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .visible-desktop {
+        display: block;
+    }
+
+    .hidden-mobile {
+        display: none;
+    }
+
+    .margin-l {
+        margin-left: 0px;
+    }
+}
+
+nav ul.list-reset {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-width: 150px;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+nav ul.list-reset li {
+    padding: 6px 10px !important;
+    margin: 0 !important;
+}
+
+nav ul.list-reset li a {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.ul-lang {
+    min-width: 133px;
+}
+
+.ul-version {
+    min-width: 90px;
+}
+
+.ul-account {
+    min-width: 190px;
+}
+
+.ul-account li {
+    padding: 5px;
+}
+
+.shadow-lg {
+    -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+        0 5px 15px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.11),
+        0 5px 15px 0 rgba(0, 0, 0, 0.08);
+}
+
+.sidebar {
+    background-color: #f3f8fd;
+}
+
+.sidebar > ul {
+    padding: 0 0 15px 0;
+}
+
+.sidebar > ul > li > ul {
+    line-height: 1.8rem;
+}
+
+.sidebar > ul > li > h2 {
+    padding: 5px 5px 5px 15px;
+    color: #3d4852;
+    font-size: 1rem;
+    margin-bottom: 0;
+    line-height: 1.4em;
+}
+
+.sidebar > ul > li > h2 img {
+    margin-right: 4px;
+}
+
+.sidebar > ul > li > ul > li {
+    padding: 0;
+    margin: 0;
+    padding-left: 11px;
+}
+
+.sidebar > ul > li > ul {
+    margin-bottom: 10px;
+}
+
+.sidebar > ul > li > ul > li a {
+    font-size: 0.9375rem;
+    color: #616469;
+    padding: 0 1.25rem;
+    // display: block;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: normal;
+    transition: padding-left 0.3s;
+}
+
+.sidebar > ul > li > ul > li.active::before {
+    content: '';
+    background: var(--primary);
+    width: 2px;
+    height: 20px;
+    position: absolute;
+    margin-left: 10px;
+}
+
+.sidebar > ul > li > ul > li.active a,
+.sidebar > ul > li > ul > li.active:hover a {
+    color: var(--primary);
+    padding-left: 1.25rem;
+    opacity: 1;
+}
+
+.sidebar > ul > li > ul > li a:hover {
+    padding-left: 1.5rem !important;
+}
+
+.documentation {
+    margin-top: 6rem;
+    padding-left: 22rem;
+}
+
+.documentation ol,
+.documentation ul {
+    margin-bottom: 20px;
+}
+
+.documentation > ul:first-of-type li {
+    padding: 4px 0.75rem;
+    line-height: 1.5;
+}
+
+.documentation > ul ul li:last-of-type {
+    border-bottom: 0px;
+}
+
+.documentation h1 {
+    color: #536ccc;
+}
+
+.documentation h2 {
+    margin-top: 2rem !important;
+}
+
+.documentation h1:first-of-type {
+    border-left-width: 0px;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.documentation h1:before {
+    content: '\F15B';
+    font-family: Font awesome\5 Free;
+    font-weight: 400;
+    margin-right: 10px;
+    font-size: 28px;
+    /*margin-left: -15px;*/
+}
+
+.documentation h3 {
+    color: #6a7679;
+    /*#6a7679*/
+}
+
+.documentation p,
+.documentation li {
+    font-size: 16px;
+    line-height: 1.8em;
+    color: #5f5f5f;
+}
+
+.documentation p,
+.documentation ol {
+    margin-bottom: 10px;
+}
+
+.documentation img,
+.documentation pre {
+    margin: 1.5em 0 !important;
+}
+
+.documentation p img {
+    margin: 1em 0 !important;
+}
+
+.documentation dl * {
+    line-height: 2em;
+}
+
+.documentation dl dd {
+    margin-bottom: 15px;
+}
+
+.documentation dl ~ ul {
+    margin-top: -5px;
+}
+
+.documentation ol > li,
+.documentation ul > li {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.documentation > ul:first-of-type ul {
+    padding-left: 0.2rem !important;
+    margin-bottom: 0;
+}
+
+a {
+    color: #007cff;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.alert.is-info p,
+.alert.is-warning p {
+    color: #fff;
+}
+
+.alert.is-info a,
+.alert.is-warning a {
+    color: #f7ff8f;
+}
+
+.alert {
+    color: #e4503f;
+    box-shadow: 3px 2px 3px 0 rgba(0, 0, 0, 0.11);
+    padding: 1rem 1.5rem;
+}
+
+.text-logout {
+    color: #4c565f;
+}
+
+.alert p {
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+@media screen and (min-width: 1024px) {
+    .switch {
+        display: none;
+    }
+
+    .hidden-desktop {
+        display: none;
+    }
+
+    .sidebar.is-hidden {
+        left: 0rem !important;
+    }
+
+    .documentation {
+        padding-left: 19rem !important;
+    }
+}
+
+.box-switch {
+    padding: 2px 5px 0 7px;
+    border-right: 1px solid #dddddd;
+}
+
+.box-switch .fa-bars {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    color: #999;
+    line-height: 1.8em;
+}
+
+.box-switch .fa-bars:before {
+    content: '\F0C9' !important;
+    background: #fff !important;
+    font-size: 24px;
+    padding: 3px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #999;
+}
+
+.box-switch .fa-bars:hover {
+    color: #000;
+}
+
+.margin-l {
+    margin-left: 1rem;
+}
+
+.documentation table {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1440px) {
+    .documentation table {
+        table-layout: fixed;
+        width: 100%;
+        font-size: 12px;
+        display: flow-root;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .sidebar {
+        top: -60px;
+        z-index: 40;
+    }
+
+    .documentation {
+        padding-left: 30px !important;
+    }
+
+    .documentation.expanded {
+        padding-left: 30px !important;
+    }
+
+    .margin-l {
+        margin-left: 0px;
+    }
+
+    .sidebar > ul {
+        padding-top: 25px;
+    }
+
+    .box-close {
+        margin-top: -32px;
+        margin-left: 0px;
+        padding: 10px 5px;
+        position: fixed;
+        background: #f3f8fd;
+        display: block;
+        z-index: 50;
+        height: max-content;
+        width: 250px;
+    }
+
+    .box-close .fa-close {
+        width: 35px;
+        height: 35px;
+        color: #999;
+        font-size: 22px;
+        background: #fff;
+        padding: 6px 5px;
+        border-radius: 3px;
+        text-align: center;
+        border: 1px solid #c5cdd8;
+        cursor: pointer;
+    }
+
+    .fa-close:hover {
+        color: #000;
+    }
+}
+
+@media screen and (max-width: 779px) {
+    .visible-mobile {
+        display: block;
+    }
+
+    h1 {
+        font-size: 1.4em !important;
+    }
+
+    h2 {
+        font-size: 1.2em !important;
+    }
+
+    .sidebar > ul > li > h2 {
+        font-size: 1em !important;
+    }
+
+    .documentation > ul:first-of-type ul {
+        padding-left: 15px !important;
+    }
+
+    .documentation > ul:first-of-type li {
+        padding: 4px 0px !important;
+    }
+
+    .documentation ul,
+    .documentation ol {
+        padding-left: 20px;
+    }
+    .documentation {
+        min-width: 320px;
+        overflow-x: auto;
+    }
+    .documentation code {
+        font-size: 0.95em !important;
+    }
+    .documentation :not(pre) > code {
+        font-size: 0.8em !important;
+        overflow-x: auto;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .margin-l {
+        margin-left: 0px;
+    }
+
+    .visible-mobile {
+        display: block;
+    }
+
+    h1 {
+        font-size: 1.4em !important;
+    }
+
+    h2 {
+        font-size: 1.2em !important;
+    }
+
+    .sidebar > ul > li > h2 {
+        font-size: 1em !important;
+    }
+}
+
+.documentation > ul:first-of-type {
+    overflow-y: auto;
+    height: calc(100% - 100px);
+}
+.credit-title {
+    color: #606f7b;
+    text-decoration: none;
+}
+.credit-package {
+    color: #606f7b;
+    text-decoration: none;
+}

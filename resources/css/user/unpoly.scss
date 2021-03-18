@@ -1,0 +1,31 @@
+@import '~unpoly/dist/unpoly';
+
+#currentVersion.capitalize {
+    text-transform: capitalize;
+}
+
+#currentLang.capitalize {
+    text-transform: capitalize;
+}
+
+#footer {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: left;
+}
+
+#footer .marl {
+    margin-left: 0px;
+    margin-bottom: 20px;
+}
+
+#footer .mar-icon {
+    margin-left: 0px !important;
+}
+
+#displayNone {
+    display: none;
+}

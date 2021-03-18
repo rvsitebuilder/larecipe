@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "es2019",
+        "module": "commonJS"
+    },
+    "exclude": ["node_modules"],
+    "include": ["resources/js/**/*"],
+    "typeAcquisition": {
+        "include": ["jquery"]
+    }
+}

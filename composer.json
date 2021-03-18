@@ -1,0 +1,55 @@
+{
+    "name": "rvsitebuilder/larecipe",
+    "type": "rvsitebuilder-app",
+    "description": "Write gorgeous documentations for your products using Markdown and keep the source on Github.",
+    "keywords": [
+        "laravel",
+        "markdown",
+        "docs",
+        "documentation",
+        "api"
+    ],
+    "authors": [
+        {
+            "name": "RVGlobalSoft",
+            "email": "support@rvglobalsoft.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "Rvsitebuilder\\Larecipe\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {}
+    },
+    "extra": {
+        "component": "package",
+        "laravel": {
+            "providers": [
+                "Rvsitebuilder\\Larecipe\\LarecipeServiceProvider"
+            ],
+            "dont-discover": [
+                "binarytorch/larecipe"
+            ]
+        },
+        "rvsitebuilder": {
+            "require": {
+                "php-ini": {
+                    "memory_limit": "128M"
+                }
+            }
+        }
+    },
+    "config": {
+        "optimize-autoloader": false,
+        "classmap-authoritative": false,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "require": {
+        "binarytorch/larecipe": "^2.4.4"
+    }
+}

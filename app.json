@@ -1,0 +1,17 @@
+{
+    "name": "rvsitebuilder/larecipe",
+    "alias": "Larecipe",
+    "description": "",
+    "keywords": [],
+    "app-launcher": 1,
+    "app-launcher-route": "admin.larecipe.index",
+    "icon": "/vendor/rvsitebuilder/larecipe/images/icon-app_larecipe.png",
+    "require": {},
+    "require-dev": {},
+    "admin-menu": [
+        {
+            "name": "Larecipe",
+            "link": "admin.larecipe.index"
+        }
+    ]
+}

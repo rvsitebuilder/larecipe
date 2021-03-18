@@ -1,0 +1,17 @@
+@media screen and (min-width: 1024px) {
+    .switch {
+        display: none;
+    }
+
+    .hidden-desktop {
+        display: none;
+    }
+
+    .sidebar.is-hidden {
+        left: 0rem !important;
+    }
+
+    .documentation {
+        padding-left: 19rem !important;
+    }
+}
