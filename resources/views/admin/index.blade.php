@@ -57,7 +57,7 @@
         @push('package-scripts')
             {!! script('vendor/rvsitebuilder/weather/js/admin/settingapikey.js') !!}
             <script>
-                @if($warning === true && $openDocs === true && !empty(config('rvsitebuilder/larecipe.github ')))
+                @if($warning === true && $openDocs === true && !empty(config('rvsitebuilder/larecipe.github')))
                     console.pop.error({
                         title: 'Error',
                         text: `{{ __('rvsitebuilder/larecipe::default.index.warning-file-index') }}`
@@ -65,7 +65,7 @@
 
                 @endif
 
-                @empty(config('rvsitebuilder / larecipe.github '))
+                @empty(config('rvsitebuilder/larecipe.github'))
                     console.pop.notice({
                         title: 'Warning',
                         text: `{{ __('rvsitebuilder/larecipe::default.index.warning-config') }}`

@@ -57,7 +57,7 @@ class RvDocumentationController extends DocumentationController
             'versions' => $documentation->publishedVersions,
             'currentSection' => $documentation->currentSection,
             'canonical' => $documentation->canonical,
-            'rvStatusCode' => $rvStatusCode
+            'rvStatusCode' => $rvStatusCode,
         ], $rvStatusCode);
     }
 
@@ -84,7 +84,7 @@ class RvDocumentationController extends DocumentationController
         }
 
         $userDocUrl = config('rvsitebuildercms.userdocument');
-        $content = preg_replace('/src="\/storage\//', "src=\"$userDocUrl/storage/", $content);
+        $content = preg_replace('/src="\/storage\//', "src=\"${userDocUrl}/storage/", $content);
 
         return response($content);
     }
