@@ -100,7 +100,7 @@ class LarecipeServiceProvider extends ServiceProvider
     protected function registerConfig(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'rvsitebuilder/larecipe');
-        $collection = collect($this->app['config']['view']['paths']);
+        $collection = collect(config('view.paths'));
         $collection->prepend(__DIR__ . '/../resources/views');
         $this->app['config']->set('view.paths', $collection->toArray());
 
