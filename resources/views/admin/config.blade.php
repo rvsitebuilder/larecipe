@@ -4,7 +4,12 @@
 <div class="uk-column-1-2 uk-column-divider">
     <label>{{ __('rvsitebuilder/larecipe::default.index.github') }} : </label>
     <div class="">
-        <input type="text" class="uk-input uk-form-width-large" name="github" placeholder="https://github.com/rvsitebuilder/developer-docs" value="{{ config('rvsitebuilder/larecipe.github') }}">
+        <input type="text"
+            class="uk-input uk-form-width-large"
+            name="github"
+            placeholder="https://github.com/rvsitebuilder/developer-docs"
+            value="{{ config('rvsitebuilder/larecipe.github') }}"
+        >
     </div>
 
     <label>{{ __('rvsitebuilder/larecipe::default.index.show-github') }}: </label>
@@ -22,8 +27,13 @@
                     {{ config('rvsitebuilder/larecipe.github_show') === false ? 'checked':null }}>
                     {{ __('rvsitebuilder/larecipe::default.index.hidden') }}
             </label>
-            <label><input class="uk-radio" type="radio" name='github_show'
-                value="true" {{ config('rvsitebuilder/larecipe.github_show') === true ? 'checked':null }}> {{ __('rvsitebuilder/larecipe::default.index.show') }}</label>
+            <label>
+                <input class="uk-radio"
+                    type="radio"
+                    name='github_show'
+                    value="true" {{ config('rvsitebuilder/larecipe.github_show') === true ? 'checked':null }}
+                    > {{ __('rvsitebuilder/larecipe::default.index.show') }}
+                </label>
 
         </div>
     </div>
@@ -72,15 +82,19 @@
 <div class="uk-column-1-2 uk-column-divider">
     <label>{{ __('rvsitebuilder/larecipe::default.index.docs-default-lang') }} </label>
     <div class="">
-            <input type="text" class="uk-input uk-form-width-medium"  name="languages[default]" placeholder="en" value="{{ config('rvsitebuilder/larecipe.languages.default') }}">
+            <input type="text" class="uk-input uk-form-width-medium"
+                name="languages[default]"
+                placeholder="en"
+                value="{{ config('rvsitebuilder/larecipe.languages.default') }}"
+            >
     </div>
-
     <label>{{ __('rvsitebuilder/larecipe::default.index.docs-all-lang') }}</label>
     <div class="">
         <input type="text"
             class="uk-input uk-form-width-medium"
             name="languages[published]"
             placeholder="en,th,ja"
-            value="{{ $larecipe->getConfig()['languages'] }}">
+            value="{{ $larecipe->getConfig()['languages'] }}"
+        >
     </div>
 </div>
