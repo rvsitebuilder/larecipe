@@ -17,7 +17,7 @@
                                 <footer class="blockquote-footer">{{ route('admin.larecipe.docs.install') }}</footer>
                             </blockquote>
                             <div class="update-area">
-                                @if(!empty(config('rvsitebuilder/larecipe.github')))
+                                @if(!empty(config('rvsitebuilder.larecipe.github')))
                                     <button type="button"
                                         class="btn btn-primary update-doc">{{ __('rvsitebuilder/larecipe::default.index.btn-update') }}</button>
                                 @else
@@ -35,7 +35,7 @@
                             <blockquote class="blockquote">
                                 <h2>{{ __('rvsitebuilder/larecipe::default.index.docs') }}</h2>
                                 <footer class="blockquote-footer">
-                                    @if(!empty(config('rvsitebuilder/larecipe.github'))) {{ route('larecipe.index') }}
+                                    @if(!empty(config('rvsitebuilder.larecipe.github'))) {{ route('larecipe.index') }}
                                     @endif
                                 </footer>
                             </blockquote>
@@ -57,7 +57,7 @@
         @push('package-scripts')
             {!! script('vendor/rvsitebuilder/weather/js/admin/settingapikey.js') !!}
             <script>
-                @if($warning === true && $openDocs === true && !empty(config('rvsitebuilder/larecipe.github')))
+                @if($warning === true && $openDocs === true && !empty(config('rvsitebuilder.larecipe.github')))
                     console.pop.error({
                         title: 'Error',
                         text: `{{ __('rvsitebuilder/larecipe::default.index.warning-file-index') }}`
@@ -65,7 +65,7 @@
 
                 @endif
 
-                @empty(config('rvsitebuilder/larecipe.github'))
+                @empty(config('rvsitebuilder.larecipe.github'))
                     console.pop.notice({
                         title: 'Warning',
                         text: `{{ __('rvsitebuilder/larecipe::default.index.warning-config') }}`

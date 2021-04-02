@@ -99,13 +99,13 @@ class LarecipeServiceProvider extends ServiceProvider
      */
     protected function registerConfig(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'rvsitebuilder/larecipe');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'rvsitebuilder.larecipe');
         $collection = collect(config('view.paths'));
         $collection->prepend(__DIR__ . '/../resources/views');
         $this->app['config']->set('view.paths', $collection->toArray());
 
         Config::get('override')->push([
-            'larecipe' => 'rvsitebuilder/larecipe',
+            'larecipe' => 'rvsitebuilder.larecipe',
         ]);
     }
 

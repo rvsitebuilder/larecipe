@@ -34,8 +34,8 @@ class RvDocumentationController extends DocumentationController
             return redirect()->route(
                 'larecipe.show',
                 [
-                    'version' => config('rvsitebuilder/larecipe.versions.default'),
-                    'page' => ($page == 'overview') ? config('rvsitebuilder/larecipe.docs.landing') : $languages . $page,
+                    'version' => config('rvsitebuilder.larecipe.versions.default'),
+                    'page' => ($page == 'overview') ? config('rvsitebuilder.larecipe.docs.landing') : $languages . $page,
                 ]
             );
         }

@@ -4,8 +4,8 @@ use Rvsitebuilder\Larecipe\Http\Controllers\User\RvDocumentationController;
 use Rvsitebuilder\Larecipe\Http\Controllers\User\RvSearchController;
 
 Route::group([
-    'prefix' => config('rvsitebuilder/larecipe.docs.route'),
-    'domain' => config('rvsitebuilder/larecipe.domain', null),
+    'prefix' => config('rvsitebuilder.larecipe.docs.route'),
+    'domain' => config('rvsitebuilder.larecipe.domain', null),
     'as' => 'larecipe.',
     'middleware' => 'web',
 ], function () {

@@ -8,7 +8,7 @@
             class="uk-input uk-form-width-large"
             name="github"
             placeholder="https://github.com/rvsitebuilder/developer-docs"
-            value="{{ config('rvsitebuilder/larecipe.github') }}"
+            value="{{ config('rvsitebuilder.larecipe.github') }}"
         >
     </div>
 
@@ -24,16 +24,16 @@
         <div class="uk-width-medium-1-1">
             <label>
                     <input class="uk-radio" type="radio" name='github_show' value="false"
-                    {{ config('rvsitebuilder/larecipe.github_show') === false ? 'checked':null }}>
+                    {{ config('rvsitebuilder.larecipe.github_show') === false ? 'checked':null }}>
                     {{ __('rvsitebuilder/larecipe::default.index.hidden') }}
             </label>
             <label>
                 <input class="uk-radio"
                     type="radio"
                     name='github_show'
-                    value="true" {{ config('rvsitebuilder/larecipe.github_show') === true ? 'checked':null }}
-                    > {{ __('rvsitebuilder/larecipe::default.index.show') }}
-                </label>
+                    value="true" {{ config('rvsitebuilder.larecipe.github_show') === true ? 'checked':null }}>
+                    {{ __('rvsitebuilder/larecipe::default.index.show') }}
+            </label>
 
         </div>
     </div>
@@ -55,7 +55,7 @@
             class="uk-input uk-form-width-medium"
             name="forum[services.disqus.site_name]"
             placeholder=""
-            value="{{ config('rvsitebuilder/larecipe.forum.services.disqus.site_name') }}">
+            value="{{ config('rvsitebuilder.larecipe.forum.services.disqus.site_name') }}">
     </div>
 </div>
 <hr>
@@ -66,7 +66,7 @@
             class="uk-input uk-form-width-medium"
             name="versions[default]"
             placeholder="master"
-            value="{{ config('rvsitebuilder/larecipe.versions.default') }}">
+            value="{{ config('rvsitebuilder.larecipe.versions.default') }}">
     </div>
 
     <label>{{ __('rvsitebuilder/larecipe::default.index.docs-all-versions') }}</label>
@@ -85,7 +85,7 @@
             <input type="text" class="uk-input uk-form-width-medium"
                 name="languages[default]"
                 placeholder="en"
-                value="{{ config('rvsitebuilder/larecipe.languages.default') }}"
+                value="{{ config('rvsitebuilder.larecipe.languages.default') }}"
             >
     </div>
     <label>{{ __('rvsitebuilder/larecipe::default.index.docs-all-lang') }}</label>
