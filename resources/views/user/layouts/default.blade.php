@@ -20,7 +20,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- DNS-Prefetch and Preconnect -->
-        <link rel="dns-prefetch" href="{{ config('rvsitebuilder/wysiwyg.wex.cdn.cdnURL') }}">
+        <link rel="dns-prefetch" href="{{ config('rvsitebuilder.wysiwyg.wex.cdn.cdnURL') }}">
         <link rel="dns-prefetch" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
