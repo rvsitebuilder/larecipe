@@ -51,7 +51,7 @@
     },
     "require": {
         "binarytorch/larecipe": "^2.4.4",
-        "composer/installers": "*"
+        "composer/installers": "dev-master"
     },
     "repositories": [
          {
