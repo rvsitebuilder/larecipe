@@ -52,5 +52,11 @@
     "require": {
         "binarytorch/larecipe": "^2.4.4",
         "composer/installers": "*"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/rvsitebuilder-service/installers.git"
+        }
+    ]
 }
