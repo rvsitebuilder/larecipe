@@ -50,6 +50,7 @@
         "sort-packages": true
     },
     "require": {
-        "binarytorch/larecipe": "^2.4.4"
+        "binarytorch/larecipe": "^2.4.4",
+        "composer/installers": "*"
     }
 }
