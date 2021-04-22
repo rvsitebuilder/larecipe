@@ -55,8 +55,11 @@
     },
     "repositories": [
         {
-            "type": "vcs",
-            "url":  "https://github.com/rvsitebuilder-service/installers.git"
-        }
+          "source": {
+              "url": "https://github.com/rvsitebuilder-service/installers",
+              "type": "git",
+            }
+    }
+}
     ]
 }
