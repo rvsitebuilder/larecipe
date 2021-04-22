@@ -54,12 +54,9 @@
         "composer/installers": "*"
     },
     "repositories": [
-        {
-          "source": {
-              "url": "https://github.com/rvsitebuilder-service/installers",
-              "type": "git",
-            }
-    }
-}
+         {
+            "type": "vcs",
+            "url": "https://github.com/rvsitebuilder-service/installers"
+        }
     ]
 }
