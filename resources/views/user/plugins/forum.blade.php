@@ -16,7 +16,7 @@
 
     <div id="disqus_thread"></div>
 
-    <script>
+    <script nonce="{{ csrf_token() }}">
         if(typeof DISQUS === "undefined"){
         var disqus_shortname = '{{ config('rvsitebuilder.larecipe.forum.services.disqus.site_name') }}';
 

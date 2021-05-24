@@ -66,7 +66,7 @@
 
         {!! $embed->siteCss !!}
 
-        <script>
+        <script nonce="{{ csrf_token() }}">
                 window.config = @json([]);
 
                 if(localStorage.getItem('larecipeSidebar') == null) {

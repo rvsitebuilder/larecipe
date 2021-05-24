@@ -57,7 +57,7 @@
 
         @push('package-scripts')
             {!! script('vendor/rvsitebuilder/weather/js/admin/settingapikey.js') !!}
-            <script>
+            <script nonce="{{ csrf_token() }}">
                 @if($warning === true && $openDocs === true && !empty(config('rvsitebuilder.larecipe.github')))
                     console.pop.error({
                         title: 'Error',
