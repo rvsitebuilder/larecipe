@@ -1,8 +1,8 @@
 {
     "name": "rvsitebuilder/larecipe",
     "alias": "Larecipe",
-    "description": "",
-    "keywords": [],
+    "description": "Write gorgeous documentations for your products using Markdown and keep the source on Github.",
+    "keywords": ["laravel", "markdown", "docs", "documentation", "api"],
     "app-launcher": 1,
     "app-launcher-route": "admin.larecipe.index",
     "icon": "/vendor/rvsitebuilder/larecipe/images/icon-app_larecipe.png",
