@@ -118,6 +118,12 @@ class InstallDocsController extends Controller
 
     protected function download_docs_file($version): bool
     {
+        $documentPath = base_path('/docs/user/en');
+        if ($this->filesystem->isDirectory($documentPath)) {
+            Log::debug(__METHOD__ . ' Skip folder exist ' . $documentPath);
+            return true;
+        }
+
         $url = config('rvsitebuilder.larecipe.github') . '/archive/' . $version . '.zip';
         Log::debug(__METHOD__ . ' START download: ' . $url);
         try {
@@ -136,6 +142,12 @@ class InstallDocsController extends Controller
 
     protected function unzip_docs_file($version): bool
     {
+        $documentPath = base_path('/docs/user/en');
+        if ($this->filesystem->isDirectory($documentPath)) {
+            Log::debug(__METHOD__ . ' Skip unzip folder exist ' . $documentPath);
+            return true;
+        }
+
         Log::debug(__METHOD__ . ' START ');
         try {
             $zip = new ZipArchive();
@@ -172,15 +184,28 @@ class InstallDocsController extends Controller
 
     protected function move_docs_file($version, $language): bool
     {
-        Log::debug(__METHOD__ . ' START verion:' . $version);
+        Log::debug(__METHOD__ . ' START version: ' . $version);
+
         try {
             $docsDirectory = base_path('/public/storage/larecipe/') . $this->branchName . '-' . $version . '/' . $language;
+
+            $documentPath = base_path('/docs/user/en');
+            if ($this->filesystem->isDirectory($documentPath)) {
+                $userDocImages = base_path('/docs/user/en/images');
+                $publicImages = public_path('storage/larecipe/docs/') . $version . '/' . $language;
+                Log::debug('Copy images' . $userDocImages . ' To ' . $docsDirectory);
+                $this->filesystem->copyDirectory($userDocImages, $publicImages);
+
+                $userDocFileMd = base_path('/docs/user/en');
+                Log::debug('Copy *.md' . $userDocFileMd . ' To ' . $docsDirectory);
+                $this->filesystem->copyDirectory($userDocFileMd, $docsDirectory);
+            }
 
             if ($this->filesystem->isDirectory($docsDirectory)) {
                 $mdAll = scandir($docsDirectory);
                 if (!empty($mdAll)) {
                     foreach ($mdAll as $mdFile) {
-                        if ($mdFile == '.' || $mdFile == '..') {
+                        if (preg_match('/^\./', $mdFile)) {
                             continue;
                         }
 
@@ -264,7 +289,7 @@ class InstallDocsController extends Controller
     protected function addALinkHeader(string $path): bool
     {
         try {
-            Log::debug('file: ' . $path);
+            //Log::debug(__METHOD__ . ' file: ' . $path);
             $content = file_get_contents($path);
             // find ## and ###
             preg_match_all('/(### |## )+(.*)/', $content, $matchHeader);
