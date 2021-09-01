@@ -20,17 +20,17 @@ class ConfigFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-                'github' => 'required',
+            'github' => 'required',
 
-                // 'forum.services.disqus.site_name' => 'required',
+            // 'forum.services.disqus.site_name' => 'required',
 
-                'versions.default' => ['required', 'not_regex:/(\,)|(\,)/'],
+            'versions.default' => ['required', 'not_regex:/(\,)|(\,)/'],
 
-                'versions.published' => ['required', 'not_regex:/(^\,)(.*?)|(.*?)(\,$)/'],
+            'versions.published' => ['required', 'not_regex:/(^\,)(.*?)|(.*?)(\,$)/'],
 
-                'languages.default' => ['required', 'regex:/(^[a-zA-Z_-]+)$/'],
+            'languages.default' => ['required', 'regex:/(^[a-zA-Z_-]+)$/'],
 
-                'languages.published' => ['required', 'regex:/^[a-zA-Z_-]+(\,[a-zA-Z_-]+)+|^[a-zA-Z_-]+$/'],
+            'languages.published' => ['required', 'regex:/^[a-zA-Z_-]+(\,[a-zA-Z_-]+)+|^[a-zA-Z_-]+$/'],
         ];
     }
 
