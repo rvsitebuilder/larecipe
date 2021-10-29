@@ -1,16 +1,5 @@
 <?php
 
-use Rvsitebuilder\Manage\Lib\ConfigLib;
-
-
-//TODO: why language option is required?
-$larecipeLanguagesPublished = ConfigLib::getDbConfig('rvsitebuilder/larecipe.languages.published');
-$languagesPublished = $larecipeLanguagesPublished ? array_map('trim', explode(',', $larecipeLanguagesPublished)) : ['en'];
-
-$larecipeVersionsPublished = ConfigLib::getDbConfig('rvsitebuilder/larecipe.versions.published');
-$versionsPublished = $larecipeVersionsPublished ? array_map('trim', explode(',', $larecipeVersionsPublished)) : [];
-
-
 return [
     'name' => 'Larecipe',
     /*
@@ -44,17 +33,17 @@ return [
     */
 
     'versions' => [
-        'default' => ConfigLib::getDbConfig('rvsitebuilder/larecipe.versions.default', ''),
-        'published' => $versionsPublished,
+        'default' => '',
+        'published' => [],
     ],
 
     'languages' => [
-        'default' => ConfigLib::getDbConfig('rvsitebuilder/larecipe.languages.default', 'en'),
-        'published' => $languagesPublished,
+        'default' => 'en',
+        'published' => ['en'],
     ],
 
-    'github' => ConfigLib::getDbConfig('rvsitebuilder/larecipe.github', ''),
-    'github_show' => ConfigLib::getDbConfig('rvsitebuilder/larecipe.github_show', false),
+    'github' => '',
+    'github_show' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -131,9 +120,12 @@ return [
     */
 
     'ui' => [
-        'code_theme' => 'dark', // or: light
-        'fav' => '',     // eg: fav.png
-        'fa_v4_shims' => true, // Add FontAwesome v4 shims prevent BC break
+        // or: light
+        'code_theme' => 'dark',
+        // eg: fav.png
+        'fav' => '',
+        // Add FontAwesome v4 shims prevent BC break
+        'fa_v4_shims' => true,
         'colors' => [
             'primary' => '#787AF6',
             'secondary' => '#47a6ef',
@@ -183,7 +175,7 @@ return [
         'default' => 'disqus',
         'services' => [
             'disqus' => [
-                'site_name' => ConfigLib::getDbConfig('rvsitebuilder/larecipe.forum.services.disqus.site_name', ''),
+                'site_name' => '',
             ],
         ],
     ],
@@ -208,7 +200,7 @@ return [
             'code-blocks' => [
                 'match' => '/\<pre\>(.|\n)*?<\/pre\>/',
                 'replacement' => '<code-block>',
-            ]
-        ]
-    ]
+            ],
+        ],
+    ],
 ];

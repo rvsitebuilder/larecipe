@@ -12,7 +12,7 @@
           </title>
 
         <!-- Favicon -->
-        {{-- <link rel="apple-touch-icon" href="{{ asset(config('rvsitebuilder/larecipe.ui.fav')) }}">  --}}
+        {{-- <link rel="apple-touch-icon" href="{{ asset(config('rvsitebuilder.larecipe.ui.fav')) }}">  --}}
         <link rel="shortcut icon" href="/storage/images/favicon.ico" sizes="32x32"/>
 
         <meta charset="utf-8">
@@ -20,7 +20,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- DNS-Prefetch and Preconnect -->
-        <link rel="dns-prefetch" href="{{ config('rvsitebuilder/wysiwyg.wex.cdn.cdnURL') }}">
+        <link rel="dns-prefetch" href="{{ config('rvsitebuilder.wysiwyg.wex.cdn.cdnURL') }}">
         <link rel="dns-prefetch" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -28,7 +28,7 @@
         {!! optional($seo)->tag !!}
         {!! $embed->siteMeta !!}
         {!! $embed->pageMeta !!}
-        @if($openGraph = config('rvsitebuilder/larecipe.seo.og'))
+        @if($openGraph = config('rvsitebuilder.larecipe.seo.og'))
             @foreach($openGraph as $key => $value)
                 @if($value)
                     <meta property="og:{{ $key }}" content="{{ $value }}" />
@@ -51,22 +51,22 @@
         <!-- CSS -->
         <link rel="stylesheet" href="{{ larecipe_assets('css/app.css') }}">
         <link rel="stylesheet" href="{{ larecipe_assets('css/font-awesome.css') }}">
-        @if (config('rvsitebuilder/larecipe.ui.fa_v4_shims', true))
+        @if (config('rvsitebuilder.larecipe.ui.fa_v4_shims', true))
             <link rel="stylesheet" href="{{ larecipe_assets('css/font-awesome-v4-shims.css') }}">
         @endif
 
         <!-- Dynamic Colors -->
         <style>
             :root {
-                --primary: {{ config('rvsitebuilder/larecipe.ui.colors.primary') }};
-                --secondary: {{ config('rvsitebuilder/larecipe.ui.colors.secondary') }};
+                --primary: {{ config('rvsitebuilder.larecipe.ui.colors.primary') }};
+                --secondary: {{ config('rvsitebuilder.larecipe.ui.colors.secondary') }};
             }
         </style>
         {{ style(mix('css/user/app.css', 'vendor/rvsitebuilder/larecipe')) }}
 
         {!! $embed->siteCss !!}
 
-        <script>
+        <script nonce="{{ csrf_token() }}">
                 window.config = @json([]);
 
                 if(localStorage.getItem('larecipeSidebar') == null) {
@@ -75,19 +75,19 @@
                 }
 
                 // To dynamic changing drop-down menu link on unpoly.js
-                const larecipeRoute = secure_url(config('rvsitebuilder/larecipe.docs.route'));
+                const larecipeRoute = secure_url(config('rvsitebuilder.larecipe.docs.route'));
                 var currentVersion = "{{ $currentVersion }}";
                 var currentLang = "{{ $currentLang }}";
 
                 var larecipeVersion = {};
-                @foreach (config('rvsitebuilder/larecipe.versions.published') as $version)
+                @foreach (config('rvsitebuilder.larecipe.versions.published') as $version)
                     larecipeVersion['{{ $version }}'] = `
                     {{  ucfirst($version) }} <i class="mx-1 fa fa-angle-down"></i>
                     `;
                 @endforeach
 
                 var larecipeLang = {};
-                @foreach(config('rvsitebuilder/larecipe.languages.published') as $lang)
+                @foreach(config('rvsitebuilder.larecipe.languages.published') as $lang)
                     larecipeLang['{{ $lang }}'] = `
                     @if(Lang::has('menus.language-picker.img.'.$lang))
                         @lang('menus.language-picker.img.'.$lang)

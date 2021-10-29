@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
-
 class LarecipeServiceProvider extends ServiceProvider
 {
     /**
@@ -56,12 +55,18 @@ class LarecipeServiceProvider extends ServiceProvider
         $dirVendor = __DIR__ . '/../vendor/binarytorch/larecipe/publishable/assets';
 
         if (is_dir($dirVendor)) {
-            $this->publishes([__DIR__ . '/../vendor/binarytorch/larecipe/publishable/assets' => public_path('vendor/binarytorch/larecipe/assets')], 'public');
+            $this->publishes([
+                __DIR__ . '/../vendor/binarytorch/larecipe/publishable/assets' => public_path('vendor/binarytorch/larecipe/assets'),
+            ], 'public');
         } else {
-            $this->publishes([__DIR__ . '/../../../../vendor/binarytorch/larecipe/publishable/assets' => public_path('vendor/binarytorch/larecipe/assets')], 'public');
+            $this->publishes([
+                __DIR__ . '/../../../../vendor/binarytorch/larecipe/publishable/assets' => public_path('vendor/binarytorch/larecipe/assets'),
+            ], 'public');
         }
 
-        $this->publishes([__DIR__ . '/../public' => public_path('vendor/rvsitebuilder/larecipe')], 'public');
+        $this->publishes([
+            __DIR__ . '/../public' => public_path('vendor/rvsitebuilder/larecipe'),
+        ], 'public');
     }
 
     /**
@@ -94,14 +99,14 @@ class LarecipeServiceProvider extends ServiceProvider
      */
     protected function registerConfig(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'rvsitebuilder/larecipe');
-        Config::set([
-            'override.larecipe' => 'rvsitebuilder/larecipe'
-        ]);
-
-        $collection = collect($this->app['config']['view']['paths']);
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'rvsitebuilder.larecipe');
+        $collection = collect(config('view.paths'));
         $collection->prepend(__DIR__ . '/../resources/views');
         $this->app['config']->set('view.paths', $collection->toArray());
+
+        Config::get('override')->push([
+            'larecipe' => 'rvsitebuilder.larecipe',
+        ]);
     }
 
     /**

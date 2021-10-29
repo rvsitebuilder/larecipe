@@ -20,9 +20,9 @@
             </div>
             --}}
         </div>
-  
+
         <div class="block mx-4 flex items-center">
-            @if(config('rvsitebuilder/larecipe.search.enabled'))
+            @if(config('rvsitebuilder.larecipe.search.enabled'))
                 <larecipe-button id="search-button"
                     :type="searchBox ? 'primary' : 'link'"
                     @click="searchBox = ! searchBox"
@@ -30,7 +30,7 @@
                     <i class="fas fa-search" id="search-button-icon"></i>
                 </larecipe-button>
             @endif
-           
+
             <div class="hidden-mobile" up-keep>
                 @include('rvsitebuilder/larecipe::user.partials.dropdown')
             </div>
