@@ -1,0 +1,7 @@
+# choose reviewer in this team when someone opens a pull request. 
+* @rvsitebuilder/all-member
+*.js @rvsitebuilder/backend
+*.php @rvsitebuilder/frontend
+*.blade.php @rvsitebuilder/ui @rvsitebuilder/backend @rvsitebuilder/frontend
+*.html *.css *.scss *.img @rvsitebuilder/ui
+.github/ .vscode/ .husky/ @rvsitebuilder/devops
